@@ -15,6 +15,19 @@ Bureaucrat::Bureaucrat()
     return ;
 }
 
+void Bureaucrat::signForm(Form& form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << this->_name << " signs " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << this->_name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
+
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Destructor of Bureaucrat called " << std::endl;

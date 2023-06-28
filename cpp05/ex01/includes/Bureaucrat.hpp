@@ -2,13 +2,17 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include <exception>
 #include <string>
+#include "../includes/Form.hpp"
 
 #define CLEAR "\e[0m"
 #define YELLOW "\e[33m"
 #define RED "\e[0;31m"
 #define GREEN "\e[0;32m"
 #define CYAN "\e[0;36m"
+
+class Form;
 
 class Bureaucrat
 {
@@ -22,6 +26,7 @@ class Bureaucrat
         std::string getName(void) const;
         void incrementGrade(void);
         void decrementGrade(void);
+        void signForm(Form& form);
         Bureaucrat(std::string name, unsigned short int grade);
         Bureaucrat(const Bureaucrat& copy);
         virtual ~Bureaucrat();
