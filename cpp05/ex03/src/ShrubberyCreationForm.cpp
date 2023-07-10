@@ -44,7 +44,6 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
             std::cout << RED "Error: can't create the file" CLEAR << std::endl;
             return;
         }
-        file.open(this->getTarget().c_str());
         file << "       _-_" << std::endl;
         file << "    /~~   ~~\\" << std::endl;
         file << " /~~         ~~\\" << std::endl;

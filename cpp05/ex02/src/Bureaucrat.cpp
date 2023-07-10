@@ -58,12 +58,20 @@ std::string Bureaucrat::getName(void) const
 
 void Bureaucrat::incrementGrade(void)
 {
-    this->_grade++;
+    this->_grade--;
+    if (this->_grade < 1)
+       throw Bureaucrat::GradeTooHighException();
+    if (this->_grade > 150)
+        throw Bureaucrat::GradeTooLowException();
 }
 
 void Bureaucrat::decrementGrade(void)
 {
-    this->_grade--;
+    this->_grade++;
+    if (this->_grade < 1)
+       throw Bureaucrat::GradeTooHighException();
+    if (this->_grade > 150)
+        throw Bureaucrat::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &elem)

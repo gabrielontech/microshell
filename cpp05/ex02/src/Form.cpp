@@ -69,11 +69,6 @@ AForm& AForm::operator=(const AForm& rhs)
 
 std::ostream& operator<<(std::ostream& out, const AForm& rhs)
 {
-    out << "AForm " << rhs.getName() << " is ";
-    if (rhs.getSigned())
-        out << "signed";
-    else
-        out << "not signed";
-    out << " and requires grade " << rhs.getGradeToSign() << " to be signed and grade " << rhs.getGradeToExecute() << " to be executed" << std::endl;
+    out << rhs.getName() << " and requires grade " << rhs.getGradeToSign() << " to be signed and grade " << rhs.getGradeToExecute() << " to be executed" << std::endl;
     return (out);
 }

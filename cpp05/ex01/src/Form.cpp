@@ -60,3 +60,9 @@ Form& Form::operator=(const Form& rhs)
         this->_signed = rhs._signed;
     return (*this);
 }
+
+std::ostream& operator<<(std::ostream& out, const Form& rhs)
+{
+    out << rhs.getName() << " and requires grade " << rhs.getGradeToSign() << " to be signed and grade " << rhs.getGradeToExecute() << " to be executed" << std::endl;
+    return (out);
+}

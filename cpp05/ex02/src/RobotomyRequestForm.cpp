@@ -29,7 +29,6 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& r
     return (*this);
 }
 
-
 void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
     if (this->getSigned() == false)

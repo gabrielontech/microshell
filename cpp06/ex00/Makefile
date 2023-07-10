@@ -11,8 +11,8 @@ ifeq ($(shell uname -s),Darwin)
 endif
 
 #The Target Binary Program
-TARGET				:= Form
-TARGET_BONUS		:= Form-bonus
+TARGET				:= ScalarConvert
+TARGET_BONUS		:= ScalarConvert-bonus
 
 BUILD				:= release
 
@@ -31,7 +31,7 @@ OBJECTS				:= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.$(OBJEX
 OBJECTS_BONUS		:= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES_BONUS:.$(SRCEXT)=.$(OBJEXT)))
 
 #Flags, Libraries and Includes
-cflags.release		:= -g3 -Wall -Werror -Wextra
+cflags.release		:= -Wall -Werror -Wextra
 cflags.valgrind		:= -Wall -Werror -Wextra -DDEBUG -ggdb
 cflags.debug		:= -Wall -Werror -Wextra -DDEBUG -ggdb -fsanitize=address -fno-omit-frame-pointer
 CFLAGS				:= $(cflags.$(BUILD))
